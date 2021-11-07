@@ -1,0 +1,96 @@
+@media (min-width: 768px){
+    .card{
+      .nombre{        
+        &:hover{
+          background-color: $main-background;  
+          border:none;
+          border-radius: 2px; 
+          .user{
+            display: block;                          
+          }
+          
+        }
+      }   
+    }
+    .date{
+       &:hover{
+       color: black;
+        }
+      } 
+    .title{
+        a{
+        font-size: 30px; 
+        &:hover{
+            color:#3b49df;
+         }     
+      
+     }
+    }
+    .card{
+        .user{ 
+        position: absolute;
+        z-index: 1;
+        border-radius: 5px;
+        border-color: #3440c4;
+        border-style: solid;
+        width:  14rem;
+        .header{ 
+        background: linear-gradient(#3440c4 50%, white 30% );
+      }
+
+      .follow{
+          .btn-follow{
+          background-color: #3440c4;
+          Color:white;
+          border-radius:5px ;
+          border: none;
+          width:180px;
+          height: 40px;
+          margin-left: 25px;
+          font-weight:500px;
+          text-align:center;
+          }
+        }
+        }        
+      }
+    
+    .marks{
+       .flex-mark{
+            &:hover{
+                color:black;
+        }
+     }
+    }
+
+    .heart{ 
+        &:hover{  
+         background-color: $main-background;
+        }
+      }
+
+    .comments{
+        &:hover{  
+            background-color: $main-background;
+           }
+        } 
+
+    .save{
+          .btn-save{
+            &:hover{
+                background-color: #b5bdc4;                 
+               
+             }
+             font-size:12px;
+         }    
+    }
+    .vistos{
+        .btn-visto{
+      
+        &:hover{  
+            background-color: $main-background;
+           } 
+        }
+      }  
+    
+
+}

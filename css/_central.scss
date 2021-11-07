@@ -1,0 +1,94 @@
+.avatar>img{
+     width: 45px;
+     border-radius: 50%;
+     padding-left: 2px;
+  }
+
+ .nombre{
+   margin:0px, 0px,0px,-4px;
+   padding: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $nombreCard;
+  }
+
+  .date{
+    font-size: 12px;
+    color:$DateCard;
+  }   
+  .title{
+    a{
+    font-size: 20px;
+    color: $titleCard;
+    font-weight: 700;
+    }
+  }
+  .marks{
+
+    .flex-mark{      
+      font-size:14px ;
+      color:$DateCard;
+      span{
+        border-radius: 5px;
+        background-color: #091B47;
+        color:#B2FFE1;
+      }
+    }
+ }
+
+ .min{
+    font-size: 11.2px;
+    color: $DateCard;
+    margin-right: 10px;
+  }
+ .save{
+    .btn-save{
+        width: 52.59px;
+        height: 32px;
+    padding: 4px 12px;
+    background-color: #D2D6DB;
+    color: #363D44;
+    font-size: 11px;
+    border-radius: 5px;
+    border:none;
+    margin-right: 10px;
+ }
+}
+
+.avatar-comment > img{
+  width: 35px;
+  border-radius: 50%;
+  padding-left: 2px;
+}
+
+.coment{
+  p{
+    font-size: 14px;  
+    color:#363D44;      
+  }
+}
+
+
+
+.heart{ 
+   border:none;
+   border-radius: 5px;
+   padding: 4px 12px 4px 8px;
+ }
+
+.comments{
+      border:none;
+      border-radius: 5px;
+      padding: 4px 12px 4px 8px;
+ } 
+
+ .vistos{
+  .btn-visto{
+  font-size: 14px;  
+  color:#363D44;
+  margin: 0px 0px 0px 8px;
+  padding: 4px 12px;
+  background-color: rgb(249,250,250);
+  border:none; 
+  }
+} 

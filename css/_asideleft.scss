@@ -1,0 +1,98 @@
+#aside-left {
+    width: auto;
+    height: auto;
+    margin-left:8px;
+    margin-top: 10px;
+    background-color: $main-background ;
+    //display: flex;
+    flex-direction: column;
+
+    img{
+        width: 22px;
+    }//cierre de imagen
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .community{
+        //@at-root: 0px;
+        margin-bottom: 6px;
+        width: 100%;
+
+        div{
+            padding: 2px;
+            margin: 8px;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            &:hover{
+                background-color: #ccdae6;
+            }//cierre de hover
+        }//div nieto de aside-left
+
+        span{
+            display: flex;
+            align-items: center;
+        }
+    }//cierre de community
+
+    .other {
+        margin: 0px;
+        margin-bottom: 24px;
+        margin-top: 16px;
+        width: 100%;
+
+        h4{
+            margin: 0px;
+        }//cierre de h4
+
+        div{
+            margin: 11.5px 8px 11.5px 6px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            &:hover{
+                background-color: #ccdae6;
+            }//cierre de hover
+        }//div nieto de aside-left
+
+        .face{
+            margin: .5px 10px .5px 10px;
+        }//cierre de face
+
+        .eyes{
+            margin: .5px 10px .5px 10px;
+        }//cierre de los eyes
+    }//cierre de other
+
+    .social-media{
+        width: 75%;
+        padding: 10px;
+        color: grey;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+    }//cierre de social-media
+
+    .Tags{
+        width: 90%;
+        margin: 20px 0px 20px 0px;
+        display: flex;
+        justify-content: space-between;
+    }//cierre de lo tags
+
+    .laptop{
+        margin-top: 120px;
+        color: blue;
+        img{
+            width: 200px;
+            &:hover{
+                background-color: #ccdae6;
+            }//cierre de el hover
+        }//cierre de img
+    }//cierre de la laptop
+}//cierre de aside-left

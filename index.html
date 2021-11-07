@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>DEV Boot</title>
+</head>
+<header class="d-flex align-items-center ">
+    <div class="contenido-header  container-fluid container-lg">
+        <div class="d-flex logo-buscar justify-content-between align-items-center ">
+            <div class="d-flex align-items-center justify-content-end justify-content-md-center">
+                <div class="navbar-light bg-faded d-flex align-items-center  justify-content-center">                    <!-- hambur -->
+                    <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#aside"
+                        aria-controls="aside" aria-expanded="false" aria-label="Mostrar Navegacion">
+                        <span class="rounded-circle navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!--  logo -->
+                <img class="logo rounded img-fluid"
+                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--R9qwOwpC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/78hs31fax49uwy6kbxyw.png">
+
+                <!--  FORM -->
+                <div class="position-relative input-lupa d-none d-md-inline mx-1">
+                    <form class="d-sm-inline rounded">
+                        <input id = "search" class="rounded border border-secondary" type="text" placeholder="Search">
+                        <div class="svg-lupa rounded-circle d-flex justify-content-center align-items-center position-absolute">
+                            <svg id = "lupita" xmlns="http://www.w3.org/2000/svg" style=" fill: #4d5760" ; width="24" height="24"
+                                viewBox="0 0 24 24" role="img" aria-labelledby="ahafzcpwtezehktg4stmpyvay1lyd0ga"
+                                class="crayons-icon">
+
+                                <title id="lupa">Search</title>
+                                <path
+                                    d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z">
+                                </path>
+                            </svg>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!--left -->
+
+            <nav class="d-flex align-items-center justify-content-end justify-content-md-center">
+                <ul class="mb-0 d-flex align-items-center justify-content-center">
+                    <li id="login" class="d-md-flex"><a href="./login.html"  class="btn-save">Log in</a></li>
+                    <li class=" d-none d-md-flex"><a href="./signup.html" id="btnBlue"class="btn btn-primary mx-2">Create account</a></li>
+                    <div  class="d-flex" id="buttons"> 
+                    <li class="m-1 d-flex d-md-none align-items-center justify-content-center rounded-circle "
+                        id="lupa2"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" role="img" aria-labelledby="ahafzcpwtezehktg4stmpyvay1lyd0ga"
+                                class="crayons-icon">
+                                <title id="ahafzcpwtezehktg4stmpyvay1lyd0ga">Search</title>
+                                <path
+                                    d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z">
+                                </path>
+                            </svg></a>
+                    </li>
+                    <li class="m-1 d-flex align-items-center justify-content-center rounded-circle ">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                role="img" aria-labelledby="arbj5z9x35iumprgat89iw4sn2p8xegt" class="crayons-icon">
+                                <title id="arbj5z9x35iumprgat89iw4sn2p8xegt">Connect</title>
+                                <path
+                                    d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10H2l2.929-2.929A9.969 9.969 0 012 12zm4.828 8H12a8 8 0 10-8-8c0 2.152.851 4.165 2.343 5.657l1.414 1.414-.929.929zM8 13h8a4 4 0 11-8 0z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="m-1 d-flex align-items-center justify-content-center rounded-circle">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                role="img" aria-labelledby="amhutz7iwwsk9s304rzm20a2ehq0cf0s" class="crayons-icon">
+                                <title id="amhutz7iwwsk9s304rzm20a2ehq0cf0s">Notifications</title>
+                                <path
+                                    d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="d-flex rounded-circle round align-items-center justify-content-center">
+                        <a href="#">
+                            <img class="rounded-circle" style="width: 33px;"
+                                src="https://res.cloudinary.com/practicaldev/image/fetch/s--IIQCl-OC--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/685849/82a388ae-7444-4bf7-93b1-15d12f226663.png">
+                        </a>
+                    </li>
+                  </div>
+                </ul>
+               
+            </nav>
+            <!--right -->
+
+        </div>
+    </div>
+</header>
+
+<div class="container p-2">
+    <div class="row justify-content-md-center">
+        <div id="aside-left" class="d-none d-md-block col-md-2 col-lg-2 asideleft">
+            <div class="community">
+                <h4 id="headers">DEV Community</h4>
+                <div>
+                  <span>
+                    <img class="img-fluid" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/house_1f3e0.png"
+                      alt="house">
+                  </span>
+                  <div><a href="https://dev.to/">Home</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/card-file-box_1f5c3-fe0f.png"
+                      alt="Card File Box">
+                  </span>
+                  <div><a href="https://dev.to/readinglist">Reading List</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/scroll_1f4dc.png"
+                      alt="Scroll">
+                  </span>
+                  <div><a href="https://dev.to/listings">Listings</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/studio-microphone_1f399-fe0f.png"
+                      alt="Studio Microphone">
+                  </span>
+                  <div><a href="https://dev.to/pod">Podcasts</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/film-projector_1f4fd-fe0f.png"
+                      alt="Film Projector">
+                  </span>
+                  <div><a href="https://dev.to/videos">Videos</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/label_1f3f7-fe0f.png"
+                      alt="Label">
+                  </span>
+                  <div><a href="https://dev.to/tags">Tags</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/light-bulb_1f4a1.png"
+                      alt="Light Bulb">
+                  </span>
+                  <div><a href="https://dev.to/faq">FAQ</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/shopping-bags_1f6cd-fe0f.png"
+                      alt="Shopping Bags">
+                  </span>
+                  <div><a href="https://shop.dev.to/">Dev Shop</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/red-heart_2764-fe0f.png"
+                      alt="Red Heart">
+                  </span>
+                  <div><a href="https://dev.to/sponsorships">Sponsors</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid" src="https://d2fltix0v2e0sb.cloudfront.net/dev-rainbow.png" alt="DEV logo">
+                  </span>
+                  <div><a href="https://dev.to/about">About</a></div>
+                </div>
+                <div>
+                  <span>
+                    <img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/postal-horn_1f4ef.png"
+                      alt="Postal Horn">
+                  </span>
+                  <div><a href="https://dev.to/contact">Contact</a></div>
+                </div>
+              </div>
+              <div class="other">
+                <h4>Other</h4>
+                <div class="manita">
+                  <div><img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/thumbs-up_1f44d.png"
+                      alt="Thumbs Up"></div>
+                  <div><a href="https://dev.to/code-of-conduct">Code of Conduct</a></div>
+                </div>
+                <div class="face">
+                  <span><img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/nerd-face_1f913.png"
+                      alt="Nerd Face"></span>
+                  <div class="face1"><a href="https://dev.to/privacy">Privacy Policy</a></div>
+                </div>
+                <div class="eyes">
+                  <span><img class="img-fluid"
+                      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/eyes_1f440.png"
+                      alt="Eyes"></span>
+                  <div><a href="https://dev.to/contact">Contact</a></div>
+                </div>
+              </div>
+              <div class="social-media">
+                <a href="https://twitter.com/thepracticaldev"><img class="img-fluid" src="https://th.bing.com/th/id/R.14228c7a6cea369958dfb2708b4624dc?rik=Qa956Np1tp8Zcg&riu=http%3a%2f%2f1000logos.net%2fwp-content%2fuploads%2f2017%2f06%2fTwitter-Logo.png&ehk=6ekNd2ZmhpvFDGRZF19QcumP9fb8pZRkwrbFbK%2bpULA%3d&risl=&pid=ImgRaw&r=0" alt="twitter image">
+                </a>
+                <a href="https://www.facebook.com/thepracticaldev"><img class="img-fluid"
+                  src="https://th.bing.com/th/id/R.4cbc901356e134d542a94a991cdbf4cf?rik=BlLVhHVs9ZVI7w&riu=http%3a%2f%2funikeo.net%2fblog%2fwp-content%2fuploads%2f2014%2f01%2ffb.png&ehk=KjHHtr92v8AsmzSvLPiXi%2fa1cyrHXgRXFlgBfj5OYKE%3d&risl=&pid=ImgRaw&r=0">
+                </a>
+                <a href="https://github.com/thepracticaldev"><img class="img-fluid"
+                  src="https://th.bing.com/th/id/OIP.ckeUFk-yid0vfWnd56w7wAHaHa?pid=ImgDet&rs=1">
+                </a>
+                <a href="https://www.instagram.com/thepracticaldev/"><img class="img-fluid" src="https://i1.wp.com/multarte.com.br/wp-content/uploads/2019/03/logo-instagram-png-fundo-transparente5.png?fit=2400%2C2400&ssl=1s">
+                </a>
+                <a href="https://www.twitch.tv/thepracticaldev"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" role="img" aria-labelledby="atl2uotiolk399yq4es8gsramtqld2yl"
+                  class="crayons-icon">
+                  <path
+                    d="M4.3 3H21v11.7l-4.7 4.7h-3.9l-2.5 2.4H7v-2.4H3V6.2L4.3 3zM5 17.4h4v2.4h.095l2.5-2.4h3.877L19 13.872V5H5v12.4zM15 8h2v4.7h-2V8zm0 0h2v4.7h-2V8zm-5 0h2v4.7h-2V8z">
+                  </path>
+                  </svg>
+                </a>
+              </div>
+              <div class="Tags">
+                <div>
+                  My Tags
+                </div>
+                <div>
+                  <a href="/dashboard/following_tags" class="crayons-btn crayons-btn--icon crayons-btn--ghost-dimmed" aria-label="Customize tag priority" title="Customize tag priority">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="crayons-icon">
+                    <path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="laptop">
+                <div>
+                  <img class="img-fluid" src="https://res.cloudinary.com/practicaldev/image/fetch/s--pVCMYZWJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://scontent-lga3-1.cdninstagram.com/vp/7c898e2c9e9fa71f72dd5d422d444549/5DFE1BFA/t51.2885-15/fr/e15/s1080x1080/57390242_386431405416711_440644832181536446_n.jpg%3F_nc_ht%3Dscontent-lga3-1.cdninstagram.com"
+                       alt="laptop">
+                </div>
+                <h3>Got DEV Stickers Yet?</h3>
+              </div>
+        </div>
+        <main class="col-12 col-md-7 col-lg-6">
+            <nav class="navbar navbar-expand-md align-items-center justify-content-between ">
+                <div><span class="navbar-brand">Posts </span> </div>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item active"> <a class="nav-link" href="#">Feed <span
+                                    class="sr-only">(current)</span></a> </li>
+                        <li class="nav-item"> <a  id="week" class="nav-link" href="#">Week</a> </li>
+                        <li class="nav-item"> <a  id="month"class="nav-link" href="#">Month</a> </li>
+                        <li  class="nav-item"> <a id="year" class="nav-link" href="#">Year</a> </li>
+
+                        <li class="nav-item"> <a  id="infinity" class="nav-link" href="#">Infinity</a> </li>
+                    </ul>
+                </div>
+                <form class="form d-md-none">              
+                    <select id="fechas" class="form-control">
+                        <option value="">Feed </option>
+                        <option value="week">Week</option>
+                        <option value="month">Month</option>
+                        <option value="year">Year</option>
+                        <option value="infinity">Infinity</option>
+                    </select>
+                </form>
+            </nav>
+            <!--card 1-->
+        <div id="wrapperCards">
+
+        </div>
+        </main>
+        <!--<div class="d-none d-lg-block col-lg-2  asideright">-->
+        <!--aside right -->
+        <div id="aside-right" class="d-none d-lg-block col-lg-3 ">
+            <div class="row g-0">
+                <div id="image" class=" d-flex justify-content-between as_border ar_top">
+                    <div>
+                        <p>
+                            <a
+                                href="https://dev.to/devteam/inside-the-gpt-3-powered-chatbot-that-someone-used-to-talk-to-their-fiance-who-passed-on-devnews-4l1h">
+                                <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KSi8rL3T--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://res.cloudinary.com/practicaldev/image/fetch/s--3GWkSFQs--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_420/https://dev-to-uploads.s3.amazonaws.com/uploads/podcast/image/346/5b0bd095-4a8c-4449-a43d-9e9b154b9d09.png"
+                                    style="float:left;width:115px;margin: 20px 15px 0 0" loading="lazy">
+                            </a>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Tune in to DevNews
+                            </h5>
+                            <p class="card-text">
+                                <small>S5E4: Inside the Gpt-3-Powered Chatbot That Someone Used to Talk to Their Fiancé
+                                    Who
+                                    Passed
+                                    <a
+                                        href="https://dev.to/devteam/inside-the-gpt-3-powered-chatbot-that-someone-used-to-talk-to-their-fiance-who-passed-on-devnews-4l1h">
+                                        <b>listen now!</b>
+                                    </a>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="listings" class="col-md-12 as_border card">
+                    <div class="as_header d-flex flex-nowrap align-items-baseline justify-content-between ">
+                        <h3 class="ar_sec2_header_strong">Listings</h3>
+                        <a href="/listings" class="ar_sec2_header_small"><b>See all</b></a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href"
+                                    href="/listings/products/bakup-io-is-your-company-data-safe-let-us-take-away-the-stress-of-backup-management-for-you-152g">
+                                    <div>Bakup.io - Is your company data safe? Take away the stress of backup management
+                                        for FREE</div>
+                                    <div class="ar_color_secundary">products</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href"
+                                    href="/listings/education/mastering-laravel-validation-rules-book-32gd">
+                                    <div>Mastering Laravel Validation Rules book</div>
+                                    <div class="ar_color_secundary">education</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href"
+                                    href="/listings/collabs/javascript-illustrated-a-free-handbook-of-important-js-concepts-2f08">
+                                    <div>JavaScript Illustrated: A FREE handbook of important JS concepts</div>
+                                    <div class="ar_color_secundary">collabs</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/products/found-dev-1ddo">
+                                    <div>Found.dev</div>
+                                    <div class="ar_color_secundary">products</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/events/hack-this-fall-2-0-48po">
+                                    <div>Hack This Fall 2.0</div>
+                                    <div class="ar_color_secundary">events</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div lass="ar_art">
+                                <a class="butomm_text" href="/listings/new">
+                                    <div><b>Create a Listing</b></div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="ar_news" class="card ar_medidas">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="ar_sec2_header">
+                                <h3 class="ar_sec2_header_strong">#news</h3>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    This week in Flutter #16
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Better JS Logging for Micro-Frontends, Browser, Node
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Game Dev Digest — Issue #106 - Improve Your Editor Workflow
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Hexagon 1.4.0 released!!! 🎉
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="ar_help" class="card ar_medidas">
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <div class="ar_sec2_header">
+                                <h3 class="ar_sec2_header_strong">#help</h3>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Need help to develop a Spring Boot + React project
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Better JS Logging for Micro-Frontends, Browser, Node
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Game Dev Digest — Issue #106 - Improve Your Editor Workflow
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/products/found-dev-1ddo">
+                                    <div>
+                                        I'm at a loss on how to market my creations
+                                    </div>
+                                    <div class="ar_color_secundary">8 comments</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/products/found-dev-1ddo">
+                                    <div>Hello, world project</div>
+                                    <div class="ar_color_secundary">3 comments</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="ar_discuss" class="card ar_medidas">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="ar_sec2_header">
+                                <h3 class="ar_sec2_header_strong">#discuss</h3>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/products/found-dev-1ddo">
+                                    <div>Hello, world project</div>
+                                    <div class="ar_color_secundary">3 comments</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Need help to develop a Spring Boot + React project
+                                    <div class="box_link_secundary">
+                                        <span class="btn btn-primary">New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/products/found-dev-1ddo">
+                                    <div>Hello, world project</div>
+                                    <div class="ar_color_secundary">3 comments</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/listings/products/found-dev-1ddo">
+                                    <div>Hello, world project</div>
+                                    <div class="ar_color_secundary">3 comments</div>
+                                </a>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="ar_art">
+                                <a class="ar_href" href="/mvolpato/this-week-in-flutter-16-4n6d">
+                                    Need help to develop a Spring Boot + React project
+                                    <div class="btn btn-primary">
+                                        <span>New</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+</body>
+
+</html>

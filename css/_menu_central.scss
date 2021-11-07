@@ -1,0 +1,38 @@
+main{
+    nav{
+        background-color: #eef0f1; 
+        span{
+            font-size:20px;           
+            color: #202428;
+            font-weight: bold;
+            }
+            
+        .navbar-nav   {
+              a{
+                font-size:16px;  
+                color: #202428;                
+                &:hover{
+                    border:0;
+                    background-color: rgba(59,73,223,0.1);
+                    border-radius: 10px;
+                    color:$Color_mor;             
+                }
+                &:focus{                       
+                    border-bottom: 4px solid $Color_mor;
+                }                          
+               }              
+            }            
+
+         .form-control{            
+            margin: 0px 0px 0px 8px;
+            width: 91px;
+            height: 40px;
+            &:focus{               
+                border: 1px solid $Color_mor;
+                box-shadow: 1px  1px $Color_mor;
+               }        
+         }
+     
+    }
+   
+}

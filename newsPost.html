@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>New Post</title>
+</head>
+
+<div class="container p-2">
+    <div class="row justify-content-md-center">
+        <div id="aside-left" class="d-none d-md-block col-md-2 col-lg-2 asideleft">
+        </div>
+        <main class="col-12 col-md-7 col-lg-6">
+            <nav class="navbar navbar-expand-md align-items-center justify-content-between ">
+                <div class="d-flex flex-row ">
+                    <div><img src="./images/4519024_dev_icon.png" width="50" height="50"></div>
+                    <div>Create Posts </div>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item"> <a class="nav-link" href="#">Edit</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Preview</a> </li>
+                    </ul>
+                </div>
+            </nav>
+
+          <div class="jumbotron ">
+            <div class="alerta">
+
+            </div>
+            <form id="form">
+                <div class="form-group">
+                <!--    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>-->
+                      <div class="container">
+                        <div class="card">
+                            <img id="img-prev" > 
+                            <!--<input type="file" name="imgUrlPostTiltle" id="inputGroupFile01">-->
+                        </div>
+                    </div>
+                       <div class="custom-file mt-2">
+                        <input type="file" name="imgUrlPostTiltle" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div> 
+                     </div>
+               <div class="form-group">
+                    <textarea name="titlePost" class="form-control" id="textareaTitle" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text"  name="tags" class="form-control " id="inputTags">
+
+                    <select class="custom-select" id="tags">
+                        <option selected>Add up to 4 tags ...</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                     <div class="custom-file">
+                        <input type="file" name="imgUrlPostContent" class="custom-file-input" id="inputGroupFile02" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                      </div>
+                </div> 
+                
+                <div class="form-group">
+                    <textarea name="txtPost" class="form-control" id="textarea-post" rows="10"></textarea>
+                </div>
+              </form>
+         </div>
+         <div class="alerta"></div>
+         <div>
+            <button type="button" id="btn-submit" class="btn btn-primary">Primary</button>
+         </div>
+
+
+        </main>
+        <div id="aside-right" class="d-none d-lg-block col-lg-3 ">
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="./js/newpost.js" type="module"></script>
+
+</body>
+
+</html>

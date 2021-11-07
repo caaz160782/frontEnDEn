@@ -1,0 +1,63 @@
+.read{
+    background-color: $main-background;
+}
+
+.card-title{
+    font-size: 24px;
+    color: $titleCard;
+    font-weight: 700;
+}
+
+.subscribe{
+    color: $titleCard;
+    border-color: #b5bdc4; 
+    border-style: solid;
+    border-width: 1px;
+  background-color: white;
+  font-weight: 500;
+    &:hover{
+        background-color: $main-background;
+        border-color: #b5bdc4; 
+        color: $titleCard;
+    }
+}
+
+.name-dis{
+    margin:0px, 0px,0px,-4px;
+    padding: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $nombreCard;
+    &:hover{
+        background-color: $main-background;  
+        border:none;
+        border-radius: 2px;              
+      }
+  
+   }
+
+   .btn-light{
+    background-color: white;
+    border-style: none;
+   }
+
+
+
+.avatar-read>img{
+    width: 100%;
+    border-radius: 100%;
+  
+ }
+
+
+
+.title-read{
+    a{
+    font-size: 20px;
+    color: $titleCard;
+    font-weight: 700;
+    &:hover{
+        color:#3b49df;
+     }    
+    }
+  }

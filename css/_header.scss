@@ -1,0 +1,170 @@
+header{
+  background-color: white;
+  height: 56px;
+  z-index:3;
+    box-shadow: 0px 1px 1px 0px rgba(36, 35, 35, 0.2);
+  -webkit-box-shadow: 10px 2px 5px 0px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 10px 2px 5px 0px rgba(0, 0, 0, 0.2);
+
+    position: sticky;
+     top: 0px;
+  // padding: 4px 0;
+
+
+}
+.opacity{
+position: absolute;
+right: 0;
+top: 0;
+width: 50px;
+height: 40px;
+  right: 1px;
+       
+}
+.rounded-circle {
+
+  height: 36px;
+  width: 36px;
+  &:hover{
+    background-color: #c1c1c5;
+  }
+
+  svg{
+    fill: #4d5760;
+  }
+}
+/*
+ .avatar{
+      height: 38px;
+    width: 38px;
+
+    &:hover{
+    background-color: white ;
+    border: 1px solid #e0dee0;
+    }
+  }
+  */
+.logo{
+  width: 50px;
+  height: 40px;
+
+}
+.navbar-toggler-icon{
+    width: 30px;
+    height: 38px;
+    &:hover{
+    background-color: #c1c1c5;
+  }
+}
+.input-lupa{
+  input{
+    background-color: #eef0f1;
+    width: 380px;
+    height: 38px;
+    &:focus{
+      outline-color: #3b49df;
+    }
+  }
+}
+
+.svg-lupa{
+  top: 1px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  &:hover{
+        background-color: #c1c1c5;
+  }
+}
+.mymain{
+ background-color: white;
+
+}
+.env{
+  background-color: #dadcdd;
+  font-size: 1rem;
+}
+.contenedor-post{
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
+#autora{
+  a{
+    color: #363d44;
+    text-decoration: none;
+    font-size: 1.1rem;
+    &:hover{
+      background-color: #eef0f1;
+    }
+
+  }
+  span{
+    font-size: 0.8rem;
+  }
+}
+.consola{
+  color: #7ed07e;
+  background-color: #08090a;
+  font-size: 1rem;
+  .rojo{
+    color: #f9690e;
+  }
+  .blanco{
+    color: white;
+  }
+  .mostaza{
+    color:  #f2ca27;;
+  }
+}
+.myul{
+
+  a{
+    color: #3b49df;
+    &:hover{
+     color:  #323ebe ;
+    }
+  }
+}
+.navegacion-final{
+    a{
+    color: #3b49df;
+    &:hover{
+     color:  #323ebe ;
+     background-color: transparent;
+    }
+  }
+}
+.table{
+  max-width: 360px;
+
+  td{
+    text-align: center;
+    padding: 2px;
+    a{
+      color: #3b49df;
+          &:hover{
+     color:  #323ebe ;
+     background-color: transparent;
+    }
+    }
+  }
+}
+link{
+     color: #3b49df;
+     &:hover{
+      color:  #323ebe ;
+     }
+}
+.react{
+
+  font-size: 2rem;
+  @media (min-width: 678px) {
+
+    font-size: 2.7rem;
+  }
+}
+
+//
