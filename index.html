@@ -46,7 +46,7 @@
             <!--left -->
 
             <nav class="d-flex align-items-center justify-content-end justify-content-md-center">
-                <ul class="mb-0 d-flex align-items-center justify-content-center">
+                <ul class="mb-0 d-flex align-items-center justify-content-center list-unstyled">
                     <li id="login" class="d-md-flex"><a href="./login.html"  class="btn-save">Log in</a></li>
                     <li class=" d-none d-md-flex"><a href="./signup.html" id="btnBlue"class="btn btn-primary mx-2">Create account</a></li>
                     <div  class="d-flex" id="buttons"> 
@@ -83,10 +83,23 @@
                         </a>
                     </li>
                     <li class="d-flex rounded-circle round align-items-center justify-content-center">
-                        <a href="#">
-                            <img class="rounded-circle" style="width: 33px;"
+                        <div>
+                            <a href="#">
+                                <img class="rounded-circle" style="width: 33px;"
                                 src="https://res.cloudinary.com/practicaldev/image/fetch/s--IIQCl-OC--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/685849/82a388ae-7444-4bf7-93b1-15d12f226663.png">
-                        </a>
+                            </a>
+                            <div class="dropdown-menu" id="hoverMenu">
+                                <a class="dropdown-item" href="#">UserName</a>
+                                <a class="dropdown-item" href="#">@Username</a>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" type="button">Dashboard</button>
+                                <button class="dropdown-item" type="button">Create Post</button>
+                                <button class="dropdown-item" type="button">Reading list</button>
+                                <button class="dropdown-item" type="button">Settings</button>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" type="button">Sign Out</button>
+                            </div>
+                        </div>
                     </li>
                   </div>
                 </ul>
