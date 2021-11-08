@@ -1,7 +1,6 @@
 let postArray=[]
 const getPost = () => {
-    postArray=[]
-    let postsObject={}
+    postArray=[]    
     $.ajax({
         method: "GET",
         url:`http://localhost:8000/posts`,          
@@ -15,8 +14,9 @@ const getPost = () => {
         },
         async: false
     })
-    return postArray
+    return postArray.reverse();
 }
+
 let sbc  
 if ((sessionStorage.getItem('vim') !== null) && (sessionStorage.getItem('vim') === "95142") ) {
       sbc=true;
@@ -34,19 +34,17 @@ if(sbc){
       $("#buttons").css('visibility','hidden');  
   }
 //funcion eliminar en bd con llamada ajax creada por Clau
-const deletePost=(idPost) => {
-    
+const deletePost=(idPost) => {    
     $.ajax({
      method: "DELETE",
      url: `http://localhost:8000/posts/${idPost}`,
      contentType:"application/json;charset=UTF-8",
      headers: {"apitoken" : token },
-     success: (response) => {
+     success: (response) => {         
          drawPost(getPost())
        },
        error: error => {
-          //console.log(error);
-          let  {responseJSON}=error;
+         let  {responseJSON}=error;
           if(responseJSON.message==="this operation is not possible")
           {
             alert("No es posible realizar esta accion");
@@ -54,17 +52,48 @@ const deletePost=(idPost) => {
        }
     })
  }
-
- //obtiene id y se llama  ala funcion ndelete
+ //obtiene id y se llama  ala funcion delete
 const clickToDeletePost=(e)=>{
     let idPost = e.target.dataset.postIdDelete
     deletePost(idPost)
 }
 const clickToEditPost=(e)=>{
     let idPost = e.target.dataset.postIdEdit
-    window.location.href = `newsPost.html?idpost=${idPost}`
+    $.ajax({
+    method:"GET",
+    url: `http://localhost:8000/busquedaPost/${idPost}`,
+    contentType:"application/json;charset=UTF-8",
+    headers: {"apitoken" : token },
+    success: (response) => {         
+         const {ok}=   response 
+         if(ok){
+          window.location.href = `newsPost.html?idpost=${idPost}`             
+         }
+      },
+      error: error => {
+         //console.log(error);
+         let  {responseJSON}=error;
+         if(responseJSON.message==="this operation is not possible")
+         {
+           alert("No es posible realizar esta accion");
+         }          
+      }
+   })
 }
-
+function formatDate(date){
+    let dateFormat = new Date(date);
+    let dd = dateFormat.getDate();
+    let mm = dateFormat.getMonth() + 1; //January is 0!
+    let yyyy = dateFormat.getFullYear();   
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+         mm = '0' + mm;
+       } 
+    dateFormat = dd+'/'+mm+'/'+yyyy;
+    return dateFormat
+ }
 //console.log(getPost())
 const createNode = (typeElement, text,arrayClass) => {
             let node = document.createElement(typeElement)
@@ -75,7 +104,6 @@ const createNode = (typeElement, text,arrayClass) => {
    return node
 }
 //pinta article por posts
-//const drawPost =(objectPost) =>{
 const drawPost =(arrayPost) =>{
    let divWrapper = document.getElementById("wrapperCards")
     while(divWrapper.lastElementChild) {
@@ -140,7 +168,7 @@ const drawPost =(arrayPost) =>{
                                             cupiditate eaque vitae quisquam nam repellendus atque numquam.`,[])
                 avatarCardBodyDiv.appendChild(avatarCardp)
             //let time1=time(fecha)
-            let avatarDatePostDiv= createNode("div",fecha,["date","mt-md-2"])
+            let avatarDatePostDiv= createNode("div",formatDate(fecha),["date","mt-md-2"])
                 avatarDatosDiv.appendChild(avatarDatePostDiv)
 
             let divWrappertTitlePost= createNode("div",null,["row","pt-2","ml-md-5","no-gutters"])
@@ -219,28 +247,26 @@ const drawPost =(arrayPost) =>{
 }
 drawPost(getPost())
 
-
 const filterWeek= (arrayPost)=>{    
     let fecha = new Date() //Genera la fecha del dia de hoy
     let mes = (fecha.getMonth() + 1)
     let hoy = fecha.getDate()
     let finde = (hoy - 7)    
+
     arrayPost = arrayPost.map( post =>{
-        return { ...post, fechaConvertida: post.fecha.split('/')}
-    })
+        return { ...post, fechaConvertida: formatDate(post.fecha).split('/')}
+      })      
     arrayPost = arrayPost.filter( post => {
-        // if(Number (post.fechaConvertida[1]) === mes) {
         return Number (post.fechaConvertida[1]) === mes 
         && Number (post.fechaConvertida[0]) >= finde 
         && Number (post.fechaConvertida[0]) <= hoy   
-    })
-    //console.log( postArray)
+    })    
     drawPost(arrayPost) 
 }
 
 const filterMonth= (arrayPost)=>{    
       arrayPost = arrayPost.map( post =>{
-        return { ...post, fechaConvertida: post.fecha.split('/')}
+        return { ...post, fechaConvertida: formatDate(post.fecha).split('/')}
     })
      arrayPost = arrayPost.filter( post => Number(post.fechaConvertida[1]) === new Date().getMonth() + 1 )
    drawPost(arrayPost)   
@@ -248,7 +274,7 @@ const filterMonth= (arrayPost)=>{
 
 const filterYear= (arrayPost)=>{    
         arrayPost = arrayPost.map( post =>{
-        return { ...post, fechaConvertida: post.fecha.split('/')}
+        return { ...post, fechaConvertida: formatDate(post.fecha).split('/')}
      })
      arrayPost = arrayPost.filter(post => Number(post.fechaConvertida[2]) === new Date().getFullYear())
      //console.log(postArray);
@@ -268,12 +294,9 @@ $("#fechas").change(()=> {
         case "year":
             filterYear(getPost())
         break;
-
         case "infinity":
             drawPost(getPost())
-        break;
-
-        
+        break;  
 
         default:
            console.log("funcion aun no programada")
@@ -283,6 +306,8 @@ $("#fechas").change(()=> {
 
 document.querySelector('#week').addEventListener('click', (e) => {
     e.preventDefault()
+   
+   
     filterWeek(getPost())  
 })
 
@@ -293,7 +318,7 @@ $('#month').click((e) => {
 
 $('#infinity').click((e) => {
     e.preventDefault()
-    drawPost(getPost())
+    drawPost(getPost().reverse())
 })
 
 document.querySelector('#year').addEventListener('click', (e) => {

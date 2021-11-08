@@ -1,5 +1,4 @@
 let objetPost
-
 const queryString =  ()=> {
     let query_string = {};
     let query = window.location.search.substring(1);
@@ -37,6 +36,20 @@ const findPost = (idPost) => {
     return post
  }
  
+ function formatDate(date){
+  let dateFormat = new Date(date);
+  let dd = dateFormat.getDate();
+  let mm = dateFormat.getMonth() + 1; //January is 0!
+  let yyyy = dateFormat.getFullYear();   
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+  if (mm < 10) {
+       mm = '0' + mm;
+     } 
+  dateFormat = dd+'/'+mm+'/'+yyyy;
+  return dateFormat
+}
 
  if(objectIdPost.idpost !== "undefined") {
     let idPost=objectIdPost.idpost
@@ -89,7 +102,7 @@ const findPost = (idPost) => {
     aAutor.setAttribute('href',"#")
     divAutor.appendChild(aAutor)
 
-    let spanAutor= createNode("span",fecha,["mx-2"])
+    let spanAutor= createNode("span",formatDate(fecha),["mx-2"])
      divAutor.appendChild(spanAutor)
 
     let hTitle = createNode("h1",titlePost,["react","d-inline-block","mt-3","mt-lg-5","mb-md-2","mb-lg-3","font-weight-bold"])
@@ -111,17 +124,7 @@ const findPost = (idPost) => {
     textPost.setAttribute('style',"border: none")   
     divtext.appendChild(textPost)   
 
-    if(imgUrlPostContent.length >0){
-    imgUrlPostContent.forEach((img)=>{
     
-      let imgPost2= createNode("img",null,["rounded","w-100","mg-fluid"])
-    imgPost2.setAttribute('src',img )
-    imgPost2.setAttribute('alt',"principal")
-    imgPost2.setAttribute('height',"274px")
-    imgPost2.setAttribute('width',"751px")
-    divPx.appendChild(imgPost2)
-     })
-    } 
   
 }
 drawPost(objetPost)
