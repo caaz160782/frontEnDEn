@@ -28,7 +28,7 @@ $('#btnSubmitLogin').click(function(){
               let  {responseJSON}=error;
               if(responseJSON.message==="No registrado")
               {
-                  $(location).attr('href','singup.html');               
+                  $(location).attr('href','signup.html');               
               }
               else{
                 alert("No se encontraron concidencias");
