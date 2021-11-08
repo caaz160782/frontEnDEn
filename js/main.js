@@ -24,15 +24,27 @@ if ((sessionStorage.getItem('vim') !== null) && (sessionStorage.getItem('vim') =
 
 let token = sessionStorage.getItem('apitoken');
 
+
 if(sbc){
+    let userData =JSON.parse(sessionStorage.getItem('user'));
+    const{userName,pictureProfileUser}=userData
     $("#login").css('visibility','hidden');
     $("#buttons").css('visibility','show');  
     document.getElementById("btnBlue").innerHTML = "Create Post";
     $('#btnBlue').prop('href','newsPost.html?idpost');
+    $('#menCreate').prop('href','newsPost.html?idpost');
+    $('#userName').text(userName);
+    $("#imgUser").attr("src",pictureProfileUser);  
   }
   else{
       $("#buttons").css('visibility','hidden');  
   }
+
+ $("#signOut").click(function(){
+    sessionStorage.clear();
+    $(location).attr('href','index.html');         
+  })
+ 
 //funcion eliminar en bd con llamada ajax creada por Clau
 const deletePost=(idPost) => {    
     $.ajax({
@@ -111,6 +123,7 @@ const drawPost =(arrayPost) =>{
     }
       arrayPost.forEach((post, index) => {
             let {_id,fecha,imgUrlPostContent,imgUrlPostTiltle,opiniones,tags,titlePost,txtPost,usuario,reactionsCount,countComment}= post
+            
             let articleCard= createNode("article",null,["card"])
             if(index === 0){
             let imgPost= createNode("img",null,["card-img-top"])
@@ -168,7 +181,7 @@ const drawPost =(arrayPost) =>{
                                             cupiditate eaque vitae quisquam nam repellendus atque numquam.`,[])
                 avatarCardBodyDiv.appendChild(avatarCardp)
             //let time1=time(fecha)
-            let avatarDatePostDiv= createNode("div",formatDate(fecha),["date","mt-md-2"])
+            let avatarDatePostDiv= createNode("div",formatDate(fecha),["date"])
                 avatarDatosDiv.appendChild(avatarDatePostDiv)
 
             let divWrappertTitlePost= createNode("div",null,["row","pt-2","ml-md-5","no-gutters"])

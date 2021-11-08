@@ -12,8 +12,10 @@ let arrayTags = []
 let token = sessionStorage.getItem('apitoken');
 
 misListener()
+
 const CLOUDINARY = 'https://api.cloudinary.com/v1_1/dcakvkbpz/image/upload'
 const Cloudinary_preset = 'vn5lewjj'
+
 //esta funcion de encarga de on¿btener el valor de la variable enviada desde la pagina index
 const queryString =  ()=> {
    let query_string = {};
@@ -83,6 +85,7 @@ titlePost.change(obtenerDatos)
 // imagenPrincipal.change(obtenerDatos)
 //imagenes.change(obtenerDatos)
 tags.change(obtenerDatos)
+
 // obtiene url de la imagenes del servidor
 // Imagen principal
 $('#inputGroupFile01').change(async (e)=> {
@@ -102,35 +105,8 @@ $('#inputGroupFile01').change(async (e)=> {
    imgPrev.src = res.data.secure_url
  // console.log(imgtoDb)
 })
-
-/*// Imagen secundaria
-$('#inputGroupFile02').change(async (e)=> {
-   let file = e.target.files[0]
-   const formData = new FormData() //Crea un nuevo formulario en HTML
-   formData.append('file', file) //crea un imput tipo file, y recibe la informacion de la imagen
-   formData.append('upload_preset', Cloudinary_preset) // crea un nuevo input, en donde ingresa el psw de cloudinary
-   //async = true
-   const res = await axios.post(CLOUDINARY, formData, {
-    headers: { 'Content-Type': 'multipart/form-data' } //informacion que ingresa a cloudinary
-    })
-    // console.log(res)
-   let imgtoDb = res.data.secure_url
-   imagePost = [...imagePost, imgtoDb]
-   // return imgtoDb
-   postObj.imgUrlPostContent = imagePost
-   console.log(imagePost)
-})
-*/
-// $('#inputGroupFile01').change((e)=> {
-//    // console.log(e)
-//    let imgUrlPostTiltle = image(e.target.files[0])
-//    console.log(imgUrlPostTiltle)
-// })
-
-
 function obtenerDatos(e) {
      postObj[e.target.name] = e.target.value
-    // console.log(postObj);
 }
 
 function fechaActual(){
@@ -182,7 +158,6 @@ btnSubmit.click( e =>{
 })
 
 const createPost = (pObject) => {
-   //console.log(pObject)
    $.ajax({
       method: "POST",
       headers: {"apitoken" : token },  

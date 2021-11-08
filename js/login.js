@@ -15,11 +15,12 @@ $('#btnSubmitLogin').click(function(){
           dataType:"json",        
           contentType:"application/json;charset=UTF-8",
           success: response => {
-              const {status,token,vim}=response;                    
+              const {status,token,vim,user}=response;                    
               if (status === 'ok')
                {
                  sessionStorage.setItem('apitoken',token)
-                 sessionStorage.setItem('vim',vim)
+                 sessionStorage.setItem('vim',vim),
+                 sessionStorage.setItem('user',JSON.stringify(user))
                 $(location).attr('href','index.html');               
                }
            }, //success		
