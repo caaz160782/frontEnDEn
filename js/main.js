@@ -4,7 +4,7 @@ const getPost = () => {
   $.ajax({
     method: "GET",
     //url:`http://localhost:8000/posts`,
-    url: `http://backdev-humble-zebra-zj.mybluemix.net/posts`,
+    url: `https://backdev-humble-zebra-zj.mybluemix.net/posts`,
     contentType: "application/json;charset=UTF-8",
     success: (response) => {
       const { payload } = response;
@@ -52,7 +52,7 @@ const deletePost = (idPost) => {
   $.ajax({
     method: "DELETE",
     //url: `http://localhost:8000/posts/${idPost}`,
-    url: `http://backdev-humble-zebra-zj.mybluemix.net/posts/${idPost}`,
+    url: `https://backdev-humble-zebra-zj.mybluemix.net/posts/${idPost}`,
     contentType: "application/json;charset=UTF-8",
     headers: { apitoken: token },
     success: (response) => {
@@ -76,7 +76,7 @@ const clickToEditPost = (e) => {
   $.ajax({
     method: "GET",
     //url: `http://localhost:8000/busquedaPost/${idPost}`,
-    url: `http://backdev-humble-zebra-zj.mybluemix.net/busquedaPost/${idPost}`,
+    url: `https://backdev-humble-zebra-zj.mybluemix.net/busquedaPost/${idPost}`,
     contentType: "application/json;charset=UTF-8",
     headers: { apitoken: token },
     success: (response) => {
@@ -165,6 +165,7 @@ const drawPost = (arrayPost) => {
     divInfoUser.appendChild(avatarDiv);
 
     let avatarImgUser = createNode("img", null, []);
+    //console.log(usuario)
     avatarImgUser.setAttribute("src", usuario.pictureProfileUser);
     avatarDiv.appendChild(avatarImgUser);
 

@@ -23,7 +23,7 @@ const findPost = (idPost) => {
   $.ajax({
     method: "GET",
     //   url: `http://localhost:8000/posts/${idPost} `,
-    url: `http://backdev-humble-zebra-zj.mybluemix.net//posts/${idPost} `,
+    url: `https://backdev-humble-zebra-zj.mybluemix.net//posts/${idPost} `,
     contentType: "application/json;charset=UTF-8",
     success: (response) => {
       const { payload } = response;

@@ -12,7 +12,7 @@ $('#btnCreatedUser').click(function(){
       
       $.ajax({
           //url: 'http://localhost:8000/users'  ,
-          url: 'http://backdev-humble-zebra-zj.mybluemix.net/users'  ,
+          url: 'https://backdev-humble-zebra-zj.mybluemix.net/users'  ,
           method: 'POST',
           data:JSON.stringify(dataString),
           dataType:"json",        

@@ -36,7 +36,7 @@ $("#btnSubmitLogin").click(function () {
 
     $.ajax({
       //         url:`http://localhost:8000/users/${_id}`,
-      url: `http://backdev-humble-zebra-zj.mybluemix.net/users/${_id}`,
+      url: `https://backdev-humble-zebra-zj.mybluemix.net/users/${_id}`,
       headers: { apitoken: token },
       method: "PATCH",
       data: JSON.stringify(dataString),

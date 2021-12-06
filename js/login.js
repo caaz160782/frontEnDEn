@@ -9,7 +9,7 @@ $("#btnSubmitLogin").click(function () {
 
     $.ajax({
       //  url: 'http://localhost:8000/auth'  ,
-      url: "http://backdev-humble-zebra-zj.mybluemix.net/auth",
+      url: "https://backdev-humble-zebra-zj.mybluemix.net/auth",
       method: "POST",
       data: JSON.stringify(dataString),
       dataType: "json",
