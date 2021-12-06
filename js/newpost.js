@@ -40,10 +40,11 @@ const getTags = () => {
     let tags
     $.ajax({
         method: "GET",
-        //url:"http://localhost:8000/tags",
-        url:"http://backdev-humble-zebra-zj.mybluemix.net/tags",
-            const {payload}=response;
-            tags = payload;
+       // url:"http://localhost:8000/tags",
+        url: 'https://backdev-humble-zebra-zj.mybluemix.net/tags',        
+        success: response => {
+            const {payload}=response
+            tags = payload
          // llenaTags(tags)
         },
         error: error => {
@@ -138,7 +139,7 @@ btnSubmit.click( e =>{
    postObj.txtPost = txtPost
    postObj.fecha = new Date()
    postObj.reactionsCount = 0
-   postObj.countComment =0
+   postObj.countComment =0      
    createPost(postObj)
    }else {
    postObj.fecha = new Date()
@@ -169,7 +170,7 @@ const createPost = (pObject) => {
       success: (response) => {
          const {ok}=response
          if(ok){
-            $(location).attr('href','index.html');
+            $(location).attr('href','index.html');                
          }   
       },
       error: error => {
@@ -184,7 +185,7 @@ function updatingPost(post) {
       method: "PATCH",
       headers: {"apitoken" : token },  
       //url:`http://localhost:8000/posts/${id}`,
-      url:`https://backdev-humble-zebra-zj.mybluemix.net/posts/${id}`,      
+      url:`https://backdev-humble-zebra-zj.mybluemix.net/posts/${id}`,
       data: JSON.stringify(post),
       dataType:"json",        
       contentType:"application/json;charset=UTF-8",    
@@ -226,13 +227,13 @@ const findPost = (idPost) => {
    let post
    $.ajax({
        method: "GET",
-       //url: `http://localhost:8000/posts/${idPost}`,        
+       //url: `http://localhost:8000/posts/${idPost}`,
        url: `https://backdev-humble-zebra-zj.mybluemix.net/posts/${idPost}`,
        contentType:"application/json;charset=UTF-8",
        success: response => {
-       let {payload}  =response;
-       post = payload           
-           preparingUpdatingPost(idPost,post)     
+         let {payload}  =response;
+         post = payload
+           preparingUpdatingPost(idPost,post)
        },
        error: error => {
            console.log(error)
