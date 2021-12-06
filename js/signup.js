@@ -11,7 +11,8 @@ $('#btnCreatedUser').click(function(){
       let dataString = {email, pasword,userName,fullName};
       
       $.ajax({
-          url: 'http://localhost:8000/users'  ,
+          //url: 'http://localhost:8000/users'  ,
+          url: 'http://backdev-humble-zebra-zj.mybluemix.net/users'  ,
           method: 'POST',
           data:JSON.stringify(dataString),
           dataType:"json",        
@@ -24,8 +25,9 @@ $('#btnCreatedUser').click(function(){
                }
            }, //success		
            error: error => {  
+             console.error(error);
               let  {responseJSON}=error;
-              if(responseJSON.errors[1].msg ==="el username ya esta registrado" ||responseJSON.errors[0].msg ==="el correo ya esta registrado" )
+              if(responseJSON.errors[1].msg ==="el username ya esta registrado" || responseJSON.errors[0].msg ==="el correo ya esta registrado" )
               {
                 alert("el username o email ya se encuentra registrado");
               }

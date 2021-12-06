@@ -40,8 +40,10 @@ const getTags = () => {
     let tags
     $.ajax({
         method: "GET",
-        url:"http://localhost:8000/tags",
-        success: response => {
+        //url:"http://localhost:8000/tags",
+        url:"http://backdev-humble-zebra-zj.mybluemix.net/tags",
+        
+
             const {payload}=response
             tags = payload
          // llenaTags(tags)
@@ -161,7 +163,8 @@ const createPost = (pObject) => {
    $.ajax({
       method: "POST",
       headers: {"apitoken" : token },  
-      url: 'http://localhost:8000/posts',
+      //url: 'http://localhost:8000/posts',
+      url: 'http://backdev-humble-zebra-zj.mybluemix.net/posts',      
       data: JSON.stringify(pObject),
       dataType:"json",        
       contentType:"application/json;charset=UTF-8",
@@ -182,7 +185,8 @@ function updatingPost(post) {
    $.ajax({
       method: "PATCH",
       headers: {"apitoken" : token },  
-      url:`http://localhost:8000/posts/${id}`,
+      //url:`http://localhost:8000/posts/${id}`,
+      url:`http://backdev-humble-zebra-zj.mybluemix.net/posts/${id}`,      
       data: JSON.stringify(post),
       dataType:"json",        
       contentType:"application/json;charset=UTF-8",    
@@ -224,7 +228,8 @@ const findPost = (idPost) => {
    let post
    $.ajax({
        method: "GET",
-       url: `http://localhost:8000/posts/${idPost}`,        
+       //url: `http://localhost:8000/posts/${idPost}`,        
+       url: `http://backdev-humble-zebra-zj.mybluemix.net/posts/${idPost}`,               
        contentType:"application/json;charset=UTF-8",
        success: response => {
          let {payload}  =response;
