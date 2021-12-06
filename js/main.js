@@ -138,6 +138,7 @@ const drawPost = (arrayPost) => {
       countComment,
     } = post;
 
+    console.log(post);
     let articleCard = createNode("article", null, ["card"]);
     if (index === 0) {
       let imgPost = createNode("img", null, ["card-img-top"]);
